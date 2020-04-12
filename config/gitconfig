@@ -1,0 +1,8 @@
+[user]
+    email = yui12327@gmail.com
+    name = yoychen
+[core]
+    editor = vim
+[alias]
+    lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    pu = pull --rebase
