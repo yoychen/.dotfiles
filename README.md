@@ -12,10 +12,13 @@ It is used to personalize my system.
   - zshrc
   - gitconfig
   - vimrc
-    - You should run `:PlugInstall` in vim the first time to install the vim plugins. 
 
 ## Setup
 
-```bash
-./setup.sh
-```
+1. Clone this repo into your home directory
+
+2. Run
+    ```bash
+    cd ~/.dotfiles
+    ./setup.sh
+    ```
