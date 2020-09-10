@@ -6,3 +6,4 @@
 [alias]
     lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
     pu = pull --rebase
+    pr = "!f() { git fetch -f ${1} pull/${2}/head; git checkout FETCH_HEAD; }; f"
