@@ -14,17 +14,6 @@ install_common_utils() {
     sudo $app curl wget tmux htop git vim
 }
 
-setup_git() {
-    ln -fs ~/.dotfiles/config/gitconfig ~/.gitconfig
-}
-
-setup_vim() {
-    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    ln -fs ~/.dotfiles/config/vimrc ~/.vimrc
-    vim +'PlugInstall --sync' +qa
-}
-
 install_pyenv() {
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
 }
@@ -60,17 +49,27 @@ install_and_setup_zsh() {
     ln -fs ~/.dotfiles/config/zshrc ~/.zshrc
 }
 
+setup_git() {
+    ln -fs ~/.dotfiles/config/gitconfig ~/.gitconfig
+}
+
+setup_vim() {
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ln -fs ~/.dotfiles/config/vimrc ~/.vimrc
+    vim +'PlugInstall --sync' +qa
+}
 
 install_common_utils
 
 # Optional
-setup_git
-setup_vim
 install_pyenv
 install_nvm
 install_docker
 install_docker_compose
 install_and_setup_zsh
+setup_git
+setup_vim
 
 GREEN='\033[0;32m'
 NO_COLOR='\033[0m'
