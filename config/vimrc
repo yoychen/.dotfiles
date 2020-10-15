@@ -9,6 +9,9 @@ Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'npm install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 
 call plug#end()
 
