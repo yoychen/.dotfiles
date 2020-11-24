@@ -40,7 +40,7 @@ install_docker_compose() {
     sudo chmod +x /usr/local/bin/docker-compose
 }
 
-install_and_setup_zsh() {
+install_zsh_and_plugins() {
     sudo $app zsh
 
     ## Disable running `exec zsh` after ohmyzsh installation
@@ -50,18 +50,21 @@ install_and_setup_zsh() {
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
     sudo $app autojump
-    ln -fs ~/.dotfiles/config/zshrc ~/.zshrc
 }
 
-setup_git() {
-    ln -fs ~/.dotfiles/config/gitconfig ~/.gitconfig
-}
-
-setup_vim() {
+install_vim_plugins() {
     curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
         https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     ln -fs ~/.dotfiles/config/vimrc ~/.vimrc
     vim +'PlugInstall --sync' +qa
+}
+
+link_zsh_config() {
+    ln -fs ~/.dotfiles/config/zshrc ~/.zshrc
+}
+
+link_git_config() {
+    ln -fs ~/.dotfiles/config/gitconfig ~/.gitconfig
 }
 
 install_common_utils
@@ -72,9 +75,10 @@ install_nvm
 install_tldr
 install_docker
 install_docker_compose
-install_and_setup_zsh
-setup_git
-setup_vim
+install_zsh_and_plugins
+install_vim_plugins
+link_zsh_config
+link_git_config
 
 GREEN='\033[0;32m'
 NO_COLOR='\033[0m'
