@@ -25,6 +25,10 @@ install_nvm() {
     nvm install --lts
 }
 
+install_tldr() {
+    npm install -g tldr
+}
+
 install_docker() {
     curl -fsSL https://get.docker.com -o get-docker.sh
     sudo sh get-docker.sh
@@ -65,6 +69,7 @@ install_common_utils
 # Optional
 install_pyenv
 install_nvm
+install_tldr
 install_docker
 install_docker_compose
 install_and_setup_zsh
