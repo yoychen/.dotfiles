@@ -36,7 +36,7 @@ set smartcase
 
 syntax on
 set ruler
-set number
+set relativenumber
 
 set t_Co=256
 let g:CSApprox_loaded = 1
@@ -115,6 +115,12 @@ vmap > >gv
 "" Move visual block
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+
+"" Easymotion shortcut
+nmap = <leader><leader>e
+vmap = <leader><leader>e
+nmap - <leader><leader>b
+vmap - <leader><leader>b
 
 "*****************************************************************************
 "" Convenience variables
