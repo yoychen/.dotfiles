@@ -38,6 +38,9 @@ syntax on
 set ruler
 set relativenumber
 
+autocmd InsertLeave * :set cursorline!
+autocmd InsertEnter * :set cursorline
+
 set t_Co=256
 let g:CSApprox_loaded = 1
 if $TERM == 'xterm'
@@ -121,6 +124,8 @@ nmap = <leader><leader>e
 vmap = <leader><leader>e
 nmap - <leader><leader>b
 vmap - <leader><leader>b
+
+inoremap <C-c> <Esc>
 
 "*****************************************************************************
 "" Convenience variables
