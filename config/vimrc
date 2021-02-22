@@ -12,6 +12,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 
 call plug#end()
 
