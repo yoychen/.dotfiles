@@ -13,6 +13,7 @@ Plug 'prettier/vim-prettier', {
   \ 'do': 'npm install',
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'flazz/vim-colorschemes'
 
 " vim-lsp
 Plug 'prabirshrestha/vim-lsp'
@@ -53,6 +54,8 @@ set relativenumber
 
 autocmd InsertLeave * :set cursorline!
 autocmd InsertEnter * :set cursorline
+
+colorscheme molokai
 
 set t_Co=256
 let g:CSApprox_loaded = 1
