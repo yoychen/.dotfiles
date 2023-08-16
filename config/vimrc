@@ -55,7 +55,11 @@ set relativenumber
 autocmd InsertLeave * :set cursorline!
 autocmd InsertEnter * :set cursorline
 
-colorscheme molokai
+" Prevent crashing before :PlugInstall
+try
+    colorscheme molokai
+catch /.*/
+endtry
 
 set t_Co=256
 let g:CSApprox_loaded = 1
