@@ -1,6 +1,6 @@
 # Yoychen's Dotfiles
 
-It is used to personalize my system.
+It is used to personalize my workspace.
 
 - utils
   - nvm
