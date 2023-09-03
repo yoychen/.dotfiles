@@ -32,8 +32,6 @@ install_docker_compose() {
 }
 
 install_zsh_and_plugins() {
-    brew install zsh
-
     ## Disable running `exec zsh` after ohmyzsh installation
     ## https://github.com/ohmyzsh/ohmyzsh/blob/d53355ab38763c6f637008d019c8e8b98f19b714/tools/install.sh#L24
     export RUNZSH=no
