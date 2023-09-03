@@ -13,12 +13,11 @@ It is used to personalize my workspace.
   - gitconfig
   - vimrc
 
-## Setup
+## Usage
 
-1. Clone this repo into your home directory
-
-2. Run
-    ```bash
-    cd ~/.dotfiles
-    ./setup.sh
-    ```
+Just clone and run the script.
+```sh
+cd ~
+git clone https://github.com/yoychen/.dotfiles.git
+.dotfiles/setup.sh
+```
