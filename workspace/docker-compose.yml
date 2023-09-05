@@ -1,0 +1,14 @@
+version: "2.1"
+services:
+  workspace:
+    build:
+      context: ./
+      args:
+        - SSH_PUBLIC_KEY=${SSH_PUBLIC_KEY}
+    environment:
+      - TZ=Asia/Taipei
+    ports:
+      - "2222:22"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    restart: unless-stopped
