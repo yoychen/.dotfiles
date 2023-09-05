@@ -8,7 +8,9 @@ if which apt > /dev/null; then
 fi
 
 # Config locale
-sudo locale-gen zh_TW zh_TW.UTF-8 zh_CN.UTF-8 en_US.UTF-8
+if which locale-gen > /dev/null; then
+    sudo locale-gen zh_TW zh_TW.UTF-8 zh_CN.UTF-8 en_US.UTF-8;
+fi
 
 install_common_utils() {
     sudo $app curl wget tmux htop git vim
