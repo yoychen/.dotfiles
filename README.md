@@ -36,3 +36,39 @@ Steps:
    ```
 
 2. In container, follow the steps mentioned in the usage section. Make sure you see the message `Setup successfully.` at the end of the execution.
+
+## Workspace Docker Image
+
+You can use docker-compose to build and run the image of my workspace, allowing you to use SSH to login and start your coding.
+
+Steps:
+
+1. Use ssh-keygen to generate you public/private key, and then place your public key in the `.env` file.
+
+   ```
+   # in workspace/.env
+   SSH_PUBLIC_KEY={your public key}
+   ```
+
+2. Move into the `workspace` folder, and then use docker-compose to build and run the image.
+
+   ```sh
+   cd workspace
+   docker-compose up -d --build
+   ```
+
+3. Use SSH to login into the container.
+
+   ```sh
+   ssh -o UserKnownHostsFile=/dev/null -p 2222 yoychen@localhost
+   ```
+
+   Setting UserKnownHostsFile to '/dev/null' is used to prevent host key verification failure when running another OpenSSH server on the same port.
+   You should remove it when you deploy the image to a public server.
+
+### References:
+
+- https://github.com/linuxserver/docker-openssh-server/blob/1e44848fc688abd521d42e5ab3b03f2d9bc81e0b/root/etc/s6-overlay/s6-rc.d/init-openssh-server-config/run#L79
+- https://github.com/laradock/laradock/blob/master/workspace/Dockerfile#L54
+- https://github.com/laradock/laradock/blob/master/docker-compose.yml#L59
+- https://laradock.io/documentation/#access-workspace-via-ssh
