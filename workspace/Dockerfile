@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:24.10
 
 RUN apt update && apt install -y openssh-server sudo git
 RUN echo '%sudo   ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers
