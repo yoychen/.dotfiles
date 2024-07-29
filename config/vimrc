@@ -5,7 +5,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'vim-scripts/CSApprox'
 Plug 'Raimondi/delimitMate'
-Plug 'Yggdroot/indentLine'
 Plug 'sheerun/vim-polyglot'
 Plug 'justinmk/vim-sneak'
 Plug 'easymotion/vim-easymotion'
@@ -66,11 +65,6 @@ let g:CSApprox_loaded = 1
 if $TERM == 'xterm'
     set term=xterm-256color
 endif
-
-let g:indentLine_enabled = 1
-let g:indentLine_concealcursor = 0
-let g:indentLine_char = '┆'
-let g:indentLine_faster = 1
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
