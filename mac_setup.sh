@@ -69,4 +69,4 @@ link_git_config
 
 GREEN='\033[0;32m'
 NO_COLOR='\033[0m'
-printf "${GREEN}Setup successfully.${NO_COLOR}\n"
+printf "${GREEN}Setup successful.${NO_COLOR}\n"
