@@ -4,8 +4,11 @@ set -e
 
 install_common_utils() {
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> "$HOME/.zprofile"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+    
     brew install tmux htop
-    brew cask install google-chrome visual-studio-code iterm2
+    brew install --cask google-chrome visual-studio-code iterm2
 }
 
 install_pyenv() {
@@ -24,11 +27,7 @@ install_tldr() {
 }
 
 install_docker() {
-    brew cask install docker
-}
-
-install_docker_compose() {
-    brew install docker-compose
+    brew install --cask docker
 }
 
 install_zsh_and_plugins() {
@@ -63,7 +62,6 @@ install_pyenv
 install_nvm
 install_tldr
 install_docker
-install_docker_compose
 install_zsh_and_plugins
 install_vim_plugins
 link_zsh_config
