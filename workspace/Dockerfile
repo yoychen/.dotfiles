@@ -1,14 +1,11 @@
 FROM ubuntu
 
 RUN apt update && apt install -y openssh-server sudo git
-RUN mkdir /var/run/sshd
 RUN echo '%sudo   ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers
 
-ARG PUID=1000
-ENV PUID ${PUID}
 ARG USER=yoychen
 ENV USER ${USER}
-RUN useradd -l -u ${PUID} -m ${USER}
+RUN usermod -l ${USER} ubuntu
 RUN usermod -aG sudo ${USER}
 
 USER ${USER}
