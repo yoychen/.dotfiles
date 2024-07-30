@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e
+set -euo pipefail
 
 if which apt > /dev/null; then
     sudo apt update;
@@ -13,7 +13,7 @@ if which locale-gen > /dev/null; then
 fi
 
 install_common_utils() {
-    sudo $app curl wget tmux htop git vim
+    sudo $app curl wget tmux htop git vim build-essential
 }
 
 install_pyenv() {
