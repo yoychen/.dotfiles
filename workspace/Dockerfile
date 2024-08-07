@@ -1,6 +1,7 @@
 FROM ubuntu:24.04
 
 RUN apt update && apt install -y openssh-server sudo git
+RUN mkdir /var/run/sshd
 RUN echo '%sudo   ALL=(ALL:ALL) NOPASSWD:ALL' > /etc/sudoers
 
 ARG USER=yoychen
